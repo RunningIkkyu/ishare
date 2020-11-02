@@ -1,15 +1,17 @@
-# io-share
+# ishare
 
-Sharing your Computer's keyboard, mouse, screen with anothor PC. 
+Sharing your Computer's keyboard, mouse, screen with multiple computers. 
 
-This project is WIP, if you got interests in this project, feel free to contact me.
+You can seamlessly opreate multiple computers on your desk from any mouse and keyboard with `ishare`.
 
-# Fearure
+This project is still WIP, if you got interests in this project, feel free to contact me at 389498623@qq.com
 
-- [] Sharing mouse.
-- [] Sharing keyboard.
-- [] Sharing screen.
-- [] Sharing clipboard.
-- [] Drag/copy file.
+## Fearures
+
+- [] Mouse Sharing.
+- [] Keyboad Sharing.
+- [] Clipboard Sharing.
+- [] Drag/copy file directly.
 - [] Notification sharing.
+- [] Windows, Mac, Linux Cross-Platform solution.
 
