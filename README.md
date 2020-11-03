@@ -1,6 +1,6 @@
 # ishare
 
-Sharing your Computer's keyboard, mouse, screen with multiple computers. 
+Sharing your Computer's keyboard, mouse with multiple computers. 
 
 You can seamlessly opreate multiple computers on your desk from any mouse and keyboard with `ishare`.
 
