@@ -45,4 +45,3 @@ if __name__ == "__main__":
         c.move_to(*i)
         time.sleep(0.01)
 
-    
