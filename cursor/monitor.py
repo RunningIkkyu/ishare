@@ -25,6 +25,13 @@ class CursorMonitor():
         print(self.x, self.y)
         track.append((self.x, self.y))
 
+    def reach_border(self, x, y):
+        pass
+
+    def get_screen_size(self):
+        width, height = 1440, 900
+        return width, height
+
     def start_listener(self):
         listener = mouse.Listener(
             on_move=self.on_move,
