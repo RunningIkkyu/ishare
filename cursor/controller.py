@@ -1,6 +1,6 @@
 from pynput.mouse import Button, Controller
 
-class Cursor():
+class CursorBase():
     """Cursor class"""
     def __init__(self):
         self.screen_number = 0
@@ -22,5 +22,5 @@ class Cursor():
 
 
 if __name__ == "__main__":
-    c = Cursor()
+    c = CursorBase()
     c.move_to(100,100)
