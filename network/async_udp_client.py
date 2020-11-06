@@ -1,6 +1,6 @@
 import asyncio
 
-class EchoClientProtocol:
+class AsynClientProtocol:
     def __init__(self, message, on_con_lost):
         self.message = message
         self.on_con_lost = on_con_lost
@@ -13,6 +13,7 @@ class EchoClientProtocol:
 
     def datagram_received(self, data, addr):
         print("Received:", data.decode())
+        pass
 
         print("Close the socket")
         self.transport.close()
@@ -25,17 +26,18 @@ class EchoClientProtocol:
         self.on_con_lost.set_result(True)
 
 
-async def main():
+
+async def send_message_to(message, ip):
     # Get a reference to the event loop as we plan to use
     # low-level APIs.
     loop = asyncio.get_running_loop()
 
     on_con_lost = loop.create_future()
-    message = "Hello World!"
 
-    transport, protocol = await loop.create_datagram_endpoint(
-        lambda: EchoClientProtocol(message, on_con_lost),
-        remote_addr=('10.42.0.1', 9999))
+    transport, _ = await loop.create_datagram_endpoint(
+        lambda: AsynClientProtocol(message, on_con_lost),
+        # remote_addr=('10.42.0.1', 9999))
+        remote_addr=(ip, 9999))
 
     try:
         await on_con_lost
@@ -43,4 +45,7 @@ async def main():
         transport.close()
 
 
-asyncio.run(main())
+if __name__ == '__main__':
+    message = "Hello World!"
+    ip = '10.42.0.1'
+    asyncio.run(send(message, ip))

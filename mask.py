@@ -1,4 +1,5 @@
 import tkinter as tk
+import time
 
 class MouseIntercepter:
     def __init__(self):
@@ -9,8 +10,8 @@ class MouseIntercepter:
         self.fullScreenState = False
 
         # Bind exit key.
-        self.window.bind("<F11>", self.toggle_full_screen)
-        self.window.bind("<Escape>", self.quit_full_screen)
+        # self.window.bind("<F11>", self.toggle_full_screen)
+        # self.window.bind("<Escape>", self.quit_full_screen)
 
         # Record current screen size, used to detect border.
         self.window_width = 1439
@@ -26,8 +27,14 @@ class MouseIntercepter:
         self.set_transparent_value(0.9)
         # Hide cursor.
         self.window.config(cursor="none")
-
         self.window.mainloop()
+
+    def show(self):
+        self.window.update()
+        self.window.deiconify()
+
+    def hide(self):
+        self.window.withdraw()
 
     def set_transparent_value(self, transparent):
         """Set transparent of current window.
@@ -55,3 +62,8 @@ class MouseIntercepter:
 
 if __name__ == '__main__':
     app = MouseIntercepter()
+    print('a')
+    time.sleep(2)
+    app.hide()
+    time.sleep(2)
+    app.show()
